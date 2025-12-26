@@ -8,7 +8,7 @@ First we created a spreadsheet based on the Hong Kong Animal Adoption Database o
 Link to HKAAD: [hkaad.siuyeong.com](https://hkaad.siuyeong.com/)
 
 The next step is loading the dataset with Pandas to prepare to upload to MongoDB Atlas
-```jupyter notebook
+```python
 # Load the dataset
 import pandas as pd
 
@@ -17,24 +17,24 @@ df.head()
 ```
 
 After that, we converted the dataset into a Python dictionary
-```jupyter notebook
+```python
 list_of_dicts = df.to_dict(orient='records')
 ```
 Finally, we uploaded the dataset onto MongoDB Atlas
-```jupyter notebook
+```python
 # Create a new collection
 collection = db.create_collection("animals")
 ```
 
-```jupyter notebook
+```python
 collection.insert_many(list_of_dicts)
 ```
 
-```jupyter notebook
+```python
 collection.count_documents({})
 ```
 
-```jupyter notebook
+```python
 2071
 ```
 

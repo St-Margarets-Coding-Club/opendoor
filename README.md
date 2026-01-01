@@ -36,7 +36,7 @@ Hence, I decided to make our second project dedicated to build user-friendly sof
 
 We decided to build a website where people could 'Doom Scroll' on it, but they're not procrastinating, they're finding a potential family member.
 
-We are just an insignificant of high schoolers who try to make a significant difference with code.
+We are just an insignificant group of high schoolers who try to make a significant difference with code.
 
 To better achieve this mission, we outlined three goals we hope to accomplish.
 

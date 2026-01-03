@@ -38,13 +38,11 @@ We decided to build a website where people could 'Doom Scroll' on it, but they'r
 
 We are just an insignificant group of high schoolers who try to make a significant difference with code.
 
-To better achieve this mission, we outlined three goals we hope to accomplish.
+To better achieve this mission, we outlined two main goals we hope to accomplish.
 
 ## 🐾 The Goals
- 1. Help 100 animals find a home and someone who loves them
- 2. Open Source and document the whole process for anyone to replicate it in their own city
- 3. Conduct a research on the Cold Start Problem, to prove that our algorithmic approach could create make adoptions happen
-
+ 1. Help as much animals as possible to find a place they call home and someone who loves them
+ 2. Open Source the code and document the whole process and help anyone to replicate it in their own city
 
 ## 🏁 The Process
  1. Convert raw data to a structured database

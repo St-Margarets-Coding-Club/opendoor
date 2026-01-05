@@ -62,18 +62,19 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  Some of the process can be automated like creating fields, renaming them, getting links or even uploading images to the cloud but some cannot be done, like cleaning links or scraping images since each shelter's website works differently.
 
  Directory
- `database`
+ - `database`
 
  Files
- `update.ipynb` creating an 'image' field in every document
- `links.ipynb` grabbing the links to every pet
- `scraping.ipynb` failed to get image source links
- `images.ipynb` after cleaning the links and getting their image source links, upload them to Cloudinary
+ - `update.ipynb` creating an 'image' field in every document
+ - `links.ipynb` grabbing the links to every pet
+ - `scraping.ipynb` failed to get image source links
+ - `images.ipynb` after cleaning the links and getting their image source links, upload them to Cloudinary
+ - `test.ipynb` to test the securing code for the database
 
- `links.txt` fetched links from MongoDB
- `batch.txt` the batch you're dealing with each round of cleaning
- `images.txt` the image source links from your current batch
- `transformed.txt` the transformed image source links by Cloudinary
+ - `links.txt` fetched links from MongoDB
+ - `batch.txt` the batch you're dealing with each round of cleaning
+ - `images.txt` the image source links from your current batch
+ - `transformed.txt` the transformed image source links by Cloudinary
 
  Note that, you must do a lot of manual work in this process but some parts can still be automated e.g. uploading images to Cloudinary
  Also, the spreadsheet files contained a lot of tracker links or redirecting links so we chose to deal with the original links first and add them to our website, which is why theoretically we can keep updating the database but it's not our priority.

@@ -49,12 +49,12 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  We used a public Google Sheets database created by Siuyeong's [Hong Kong Animal Adoption Database](https://hkaad.siuyeong.com/) and converted it into a NoSQL Database hosted on MongoDB Atlas.
 
  Directory
- `database`
+ - `database`
  
  Files
- `animals.csv` the spreadsheet
+ - `animals.csv` the spreadsheet
 
- `convert.ipynb` converting .csv into MongoDB
+ - `convert.ipynb` converting .csv into MongoDB
  
  2. Creating the images
  You cannot have a proper profile without an image but the spreadsheet didn't provide it so we built it ourselves.

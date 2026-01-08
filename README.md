@@ -56,7 +56,7 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
 
  - `convert.ipynb` converting .csv into MongoDB
  
- 2. Creating the images
+ 2. Adding the images
  You cannot have a proper profile without an image but the spreadsheet didn't provide it so we built it ourselves.
 
  Some of the process can be automated like creating fields, renaming them, getting links or even uploading images to the cloud but some cannot be done, like cleaning links or scraping images since each shelter's website works differently.
@@ -79,8 +79,34 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  Note that, you must do a lot of manual work in this process but some parts can still be automated e.g. uploading images to Cloudinary
  Also, the spreadsheet files contained a lot of tracker links or redirecting links so we chose to deal with the original links first and add them to our website, which is why theoretically we can keep updating the database but it's not our priority.
 
- Further steps are still planning
+ 3. Connecting the database to the frontend via backend
+ We have some usable profiles now, next step is to bring it to life visually! And to do that, we need a backend.
 
+ Our backend is Python with Flask
+
+ Directory
+ - `server`
+
+ Files
+ - `data.py` fetching usable profiles only
+ - `server.py` communicate the data to the frontend
+
+ Sub-Directory
+ - `/static` 
+ - `/css`
+ - `/js`
+
+ Files
+ - `index.css` styling purposes
+ - `connector.js` communicate the data to the frontend
+
+ Sub-Directory
+ - `/templates`
+
+ Files
+ - `index.html` skeleton for the frontend
+
+ Our team is currently working on the frontend...Stay tuned...
 
 ## 🌐 Try out OpenDoor
 

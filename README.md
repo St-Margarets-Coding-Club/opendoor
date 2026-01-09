@@ -82,7 +82,7 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  3. Connecting the database to the frontend via backend
  We have some usable profiles now, next step is to bring it to life visually! And to do that, we need a backend.
 
- Our backend is Python with Flask
+ Our backend is built with Python and Flask. Main purpose serves as a bridge from the database to the frontend.
 
  Directory
  - `server`
@@ -106,18 +106,28 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  Files
  - `index.html` skeleton for the frontend
 
- Our team is currently working on the frontend...Stay tuned...
+ 4. Deploy the prototype
+ It is certainly not done yet and never will be. However we still deployed to the internet first for real edge cases testing.
+
+ Directory
+ - `server`
+
+ Sub-Directory
+ - `/templates` 
+
+ Files
+ - `index.html` skeleton for the frontend
+
+ Our team is currently still working on the frontend...Stay Tuned...
 
 ## 🌐 Try out OpenDoor
 
-It is not yet live on the internet right now
+It is in constant iteration
 
 ## 🎞️ Preview
 
+It is a prototype demo
 
 
-
-
-https://github.com/user-attachments/assets/83484912-08a5-4450-94da-8f428cbb81cb
 
 

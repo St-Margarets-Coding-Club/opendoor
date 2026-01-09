@@ -3,6 +3,7 @@ from flask import Flask, render_template, jsonify
 import random
 import data
 from bson import json_util
+from waitress import serve
 
 #Sooo, this entire code sends out and recieves data, loads index.html
 
@@ -30,10 +31,9 @@ def get_data():
     return json.loads(json_util.dumps(data))
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
-
-
-
-
+if __name__=="__main__":
+    print("Starting server on http://0.0.0.0:8000")
+    serve(app, host='0.0.0.0', port=8000, threads=4)

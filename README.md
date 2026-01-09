@@ -124,9 +124,14 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
 
 It is in constant iteration
 
+Prototype ➡️ https://opendoor-pink.vercel.app/
+
 ## 🎞️ Preview
 
-It is a prototype demo
+It is a prototype demo ⬇️
+
+https://github.com/user-attachments/assets/3333e898-6fbc-44c3-954d-5d40664d9158
+
 
 
 

@@ -14,6 +14,7 @@ Cloud
 - `MongoDB Atlas`
 - `Cloudinary`
 - `Vercel`
+- `Flask`
 
 ## 🚀 Features
 

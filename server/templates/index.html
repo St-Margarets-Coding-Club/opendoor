@@ -8,7 +8,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/closeddoor.png') }}">    
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/closeddoor.png') }}">
+        <script defer src="/_vercel/insights/script.js"></script>
     </head>
     <body>
         <button onclick="fetchData()">Load Data</button>
@@ -22,4 +23,5 @@
         
         <script src="{{ url_for('static', filename='js/connector.js') }}" async defer></script>
     </body>
+
 </html>

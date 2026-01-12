@@ -30,6 +30,10 @@ cursor = col.find({})
 list_of_documents = list(cursor)
 
 #Chooses all profiles with image links provided
-list = [item for item in list_of_documents
+documents = [item for item in list_of_documents
         if item['image'] != 'temp']
+
+list = list(set(tuple(d.items()) for d in documents))
+
+list = [dict(t) for t in list]
 

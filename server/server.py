@@ -11,9 +11,21 @@ app = Flask(__name__)
 
 
 #Read data.py for better understanding, this code gets a random animal data from the list
+def get_list():
+    global animal_list
+    animal_list = data.list[:]
+    shuffle(animal_list)
+    return animal_list
+
+#Read data.py for better understanding, this code gets a random animal data from the list
 def animals():
-    animals = data.list
-    animal = random.choice(animals)
+    animal_list = get_list()
+    
+    if not animal_list:
+        animal_list = get_list()
+    else:
+        animal = random.choice(animal_list)
+        animal_list.remove(animal)       
     return animal
 
 
@@ -37,3 +49,4 @@ def get_data():
 if __name__=="__main__":
     print("Starting server on http://0.0.0.0:8000")
     serve(app, host='0.0.0.0', port=8000, threads=4)
+

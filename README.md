@@ -108,10 +108,16 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  - `index.html` skeleton for the frontend
 
  4. Deploy the prototype
+
  It is certainly not done yet and never will be. However we still deployed to the internet first for real edge cases testing.
 
  Directory
  - `server`
+
+ Files
+ - `vercel.json` tells Vercel how to build the app
+ - `server.py` redirects all the requests
+ - `data.py` access the database
 
  Sub-Directory
  - `/templates` 

@@ -19,7 +19,6 @@ function fetchData() {
             displayOrganization(data);
             displayType(data);
             displayImage(data);
-            console.log(data);
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
@@ -100,3 +99,4 @@ function fetchData() {
 
 
     }
+

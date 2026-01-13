@@ -10,7 +10,7 @@ from waitress import serve
 
 app = Flask(__name__)
 
-animal_list = []
+animal_list = data.list[:]
 
 #Read data.py for better understanding, this code gets a random animal data from the list
 def animals():
@@ -46,6 +46,7 @@ def get_data():
 if __name__=="__main__":
     print("Starting server on http://0.0.0.0:8000")
     serve(app, host='0.0.0.0', port=8000, threads=4)
+
 
 
 

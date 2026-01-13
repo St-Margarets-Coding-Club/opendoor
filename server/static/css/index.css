@@ -1,0 +1,155 @@
+body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+}
+
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        background-color: white;
+}
+
+.logo,
+#emailIcon {
+        width: 56px;
+        height: 56px;
+}
+
+main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 16px;
+}
+
+.card {
+        background: white;
+        border-radius: 35px;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        width: 400px;
+}
+
+#imageHolder {
+        position: relative;
+}
+
+.animal-img {
+        width: 480px;
+        height: 480px;
+        display: block;
+}
+
+.placeholder-image {
+        width: 480px;
+        height: 400px;
+        background-color: #e0e0e0;
+        border-radius: 24px 24px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999999;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+}
+
+.info {
+        padding: 28px 24px;
+        text-align: center;
+}
+
+#data-name,
+#data-organization,
+#data-type,
+#data-gender {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+
+#data-name li {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0 0 8px 0;
+        color: #222;
+}
+
+#data-organization li {
+        font-size: 20px;
+        color: #555;
+        margin: 0 0 12px 0;
+}
+
+.type-gender li {
+        display: inline;
+        font-size: 20px;
+        color: #666;
+}
+
+#data-type li::after {
+        content: " • ";
+        color: #888;
+}
+
+#data-type li.placeholder::after {
+        content: "";
+}
+
+.placeholder {
+        background-color: #e0e0e0;
+        border-radius: 12px;
+        color: #999999;
+        text-align: center;
+        margin: 12px auto;
+        max-width: 90%;
+}
+
+#data-name .placeholder {
+        font-size: 36px;
+        font-weight: bold;
+        padding: 24px 40px;
+        color: #000;
+}
+
+#data-organization .placeholder {
+        font-size: 20px;
+        padding: 16px 32px;
+}
+
+.type-gender .placeholder {
+        display: inline-block;
+        font-size: 18px;
+        padding: 10px 24px;
+        border-radius: 30px;
+        margin: 0 12px;
+}
+
+.adopt-button {
+        display: inline-block;
+}
+
+footer {
+        
+        text-align: center;
+}
+
+#shuffleButton {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+}
+
+#data-link,
+#data-image {
+        display: none;
+}

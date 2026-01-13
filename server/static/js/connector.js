@@ -50,14 +50,12 @@ function fetchData() {
 
     };
         function displaylink(items) {
-        //Displays animals access link
-        const listElement = document.getElementById('data-link');
-        listElement.innerHTML = ''; 
-        const listItem = document.createElement('a');
+        //Displays animals access link 
+        const listItem = document.getElementById('adoptLink');
+        
         listItem.href = items.link;
-        listItem.textContent = "ADOPT";
         listItem.target = '_blank'
-        listElement.appendChild(listItem);
+        
         console.log(items);
 
     };

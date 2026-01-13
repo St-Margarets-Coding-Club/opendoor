@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
+
+<head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>OpenDoor</title>
@@ -10,18 +10,68 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/closeddoor.png') }}">
         <script defer src="/_vercel/insights/script.js"></script>
-    </head>
-    <body>
-        <button onclick="fetchData()">Load Data</button>
-        <ul id="data-name"></ul>  
-        <ul id="data-gender"></ul>
-        <ul id="data-link"></ul>
-        <ul id="data-organization"></ul>
-        <ul id="data-type"></ul>
+</head>
+
+<body onload="fetchData()">
+        <header>
+                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" alt="Logo" class="logo">
+                <img src="{{ url_for('static', filename='images/mail.png') }}" id="emailIcon" alt="Contact"
+                        onclick="toggleEmail()">
+        </header>
+
+        <main>
+                <div class="card">
+                        <div id="imageHolder">
+                                <div class="placeholder-image">Animal Photo</div>
+                        </div>
+
+                        <div class="info">
+                                <ul id="data-name">
+                                        <li class="placeholder">Dog Name</li>
+                                </ul>
+                                <ul id="data-organization">
+                                        <li class="placeholder">Shelter Name</li>
+                                </ul>
+                                <div class="type-gender">
+                                        <ul id="data-type">
+                                                <li class="placeholder">Dog</li>
+                                        </ul>
+                                        <ul id="data-gender">
+                                                <li class="placeholder">Gender</li>
+                                        </ul>
+                                </div>
+                
+                                        <a href="#" id="adoptLink" class="adopt-button">
+                                        
+                                                <img src="{{ url_for('static', filename='images/adoptme.png') }}" id="dopt" alt="Adopt Button" width="120" height="60">
+                                        </a>
+                                
+                        </div>
+                </div>
+        </main>
+
+        <footer>
+                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" id="shuffleButton" alt="New Animal"
+                        onclick="fetchData()">
+        </footer>
+
+       
         <ul id="data-image"></ul>
-        <div id="imageHolder"></div>
-        
+
+        <script>
+                const emailSrc = "";
+                const checkSrc = "";
+
+                function toggleEmail() {
+                        const icon = document.getElementById('emailIcon');
+                        icon.src = checkSrc;
+                        setTimeout(() => {
+                                icon.src = emailSrc;
+                        }, 1000);
+                }
+        </script>
+
         <script src="{{ url_for('static', filename='js/connector.js') }}" async defer></script>
-    </body>
+</body>
 
 </html>

@@ -83,7 +83,7 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  3. Connecting the database to the frontend via backend
  We have some usable profiles now, next step is to bring it to life visually! And to do that, we need a backend.
 
- Our backend is built with Python and Flask. Main purpose serves as a bridge from the database to the frontend.
+ Our backend is built with Python and Flask. Main purpose serves as a bridge from the database to the frontend. First we wrote a Python file that pulls usable profiles from the database as a list. Next up, we implemented a server using Python and Flask to send the profiles to the JavaScript file which then sends it to the frontend.
 
  Directory
  - `server`
@@ -111,6 +111,8 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
 
  It is certainly not done yet and never will be. However we still deployed to the internet first for real edge cases testing.
 
+ We decided to pick Vercel as our cloud hosting platform because it's free, serverless and other perks. In order to deploy the project on Vercel, you would need a .json file to route all the requests to the server.
+
  Directory
  - `server`
 
@@ -125,8 +127,34 @@ To better achieve this mission, we outlined two main goals we hope to accomplish
  Files
  - `index.html` skeleton for the frontend
 
- Our team is currently still working on the frontend...Stay Tuned...
+ 5. Paint the door
+ For the final step of v1, we must make our frontend look cozy and aesthetic.
 
+ We decided to use a dual approach of CSS and custom tailored UI components to add that artistic touch.
+
+ Directory
+ - `server`
+
+ Sub-Directory
+ - `/templates`
+
+ Files
+ - `index.html` skeleton for the frontend
+ - `index.css` styling purposes
+
+ Sub-Directory
+ - `/images`
+
+ Files
+ - `adoptme.png`
+ - `closeddoor.png`
+ - `opendoor.png`
+ - `mail.png`
+
+ Our prototype was basically finished but we still have lots of features to include and lots of bugs to fix. Our project will be consistently    maintained.
+
+ The next step will be doing sales and getting users...
+ 
 ## 🌐 Try out OpenDoor
 
 It is in constant iteration

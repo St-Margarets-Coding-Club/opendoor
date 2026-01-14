@@ -1,25 +1,35 @@
 body {
         margin: 0;
         padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Chiron GoRound TC", sans-serif;
+        font-optical-sizing: auto;
+        font-size: 20px;
+        font-weight: bold;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        background-color: #f5f5f5;
+        background-color: #e5d8d2;
+        overflow-y: hidden;
 }
 
 header {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        padding: 16px;
-        background-color: white;
+        padding: 4px;
+        background-color: #e5d8d2;
+}
+
+
+#emailIcon {
+        width: 86px;
+        height: 56px;
 }
 
 .logo,
-#emailIcon {
+#Logo {
         width: 56px;
-        height: 56px;
+        height: 60px;
 }
 
 main {
@@ -32,11 +42,11 @@ main {
 }
 
 .card {
-        background: white;
+        background: #e5d8d2;
         border-radius: 35px;
         overflow: hidden;
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        width: 400px;
+        width: 350px;
 }
 
 #imageHolder {
@@ -44,14 +54,14 @@ main {
 }
 
 .animal-img {
-        width: 480px;
-        height: 480px;
+        width: 350px;
+        height: 350px;
         display: block;
 }
 
 .placeholder-image {
-        width: 480px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
         background-color: #e0e0e0;
         border-radius: 24px 24px 0 0;
         display: flex;
@@ -138,14 +148,17 @@ main {
         display: inline-block;
 }
 
-footer {
+.bottom {
         
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
 }
 
 #shuffleButton {
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 100px;
         cursor: pointer;
 }
 

@@ -10,11 +10,15 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/closeddoor.png') }}">
         <script defer src="/_vercel/insights/script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+TC&display=swap" rel="stylesheet">
 </head>
 
 <body onload="fetchData()">
         <header>
-                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" alt="Logo" class="logo">
+                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" alt="Logo" class="logo"
+                        onclick="reloadPage()">
                 <img src="{{ url_for('static', filename='images/mail.png') }}" id="emailIcon" alt="Contact"
                         onclick="toggleEmail()">
         </header>
@@ -40,21 +44,17 @@
                                                 <li class="placeholder">Gender</li>
                                         </ul>
                                 </div>
-                
+
+                                <div class="bottom">
                                         <a href="#" id="adoptLink" class="adopt-button">
-                                        
-                                                <img src="{{ url_for('static', filename='images/adoptme.png') }}" id="dopt" alt="Adopt Button" width="120" height="60">
+                                                <img src="{{ url_for('static', filename='images/adoptme.png') }}" id="dopt" alt="Adopt Button" width="160" height="100">
                                         </a>
-                                
+                                                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" id="shuffleButton" alt="New Animal"
+                                                        onclick="fetchData()">
+                                </div>
                         </div>
                 </div>
         </main>
-
-        <footer>
-                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" id="shuffleButton" alt="New Animal"
-                        onclick="fetchData()">
-        </footer>
-
        
         <ul id="data-image"></ul>
 

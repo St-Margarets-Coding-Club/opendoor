@@ -87,14 +87,23 @@ function fetchData() {
         const petImage = document.createElement('img');
         petImage.src = items.image;
         petImage.alt = "Pet image was supposed to be here:(";
-        petImage.width = 400;
-
-        petImage.length = 400;
-        petImage.style.borderRadius = "40px";
+        petImage.width = 350;
+        petImage.height = 350;
+        petImage.style.borderRadius = "35px";
         petImage.loading = "lazy";
         
         cont.appendChild(petImage);
 
 
+    }
+
+    function toggleEmail() {
+        const emailIcon = document.getElementById('emailIcon');
+        const emailAddress = 'https://forms.gle/QpAajphxUtpaT93L7';
+        window.open(emailAddress, '_blank');
+    }
+
+    function reloadPage() {
+        location.reload();
     }
 

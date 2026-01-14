@@ -74,8 +74,14 @@ main {
 }
 
 .info {
-        padding: 28px 24px;
+        padding: 24px 24px;
         text-align: center;
+}
+
+.name-and-org {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 }
 
 #data-name,
@@ -100,10 +106,10 @@ main {
         margin: 0 0 12px 0;
 }
 
-.type-gender li {
-        display: inline;
-        font-size: 20px;
-        color: #666;
+.type-gender {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 }
 
 #data-type li::after {
@@ -149,7 +155,6 @@ main {
 }
 
 .bottom {
-        
         display: flex;
         justify-content: space-between;
         align-items: center;

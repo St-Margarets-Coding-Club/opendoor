@@ -1,6 +1,6 @@
 # 😸 OpenDoor
 
-An animal adoption website built by high schoolers from Hong Kong, with aesthetic UI/UX and a social media approach where you could only view one profile at a time. Our database which stores the animal profiles are layered public data from [Hong Kong Animal Adoption Database](https://hkaad.siuyeong.com/) which has animals from major animal shelters.
+An animal adoption website [useopendoor.com](https://opendoor-pink.vercel.app/) built by high schoolers from Hong Kong, with aesthetic UI/UX and a social media approach where you could only view one profile at a time. Our database which stores the animal profiles are layered public data from [Hong Kong Animal Adoption Database](https://hkaad.siuyeong.com/) which has animals from major animal shelters.
 
 ## 🚀 Features
 
@@ -32,7 +32,7 @@ Initiatives are abstract. Therefore, we outlined the goals we want to achieve.
 Our website is always updating and please join our [waitlist](https://forms.gle/hLxx1XsX67QfmPj68) for any questions and contact us at stmargaretscodingclub@gmail.com
 
 Try out our website at
-[OpenDoor](https://opendoor-pink.vercel.app/)
+[useopendoor.com](https://opendoor-pink.vercel.app/)
 
 ## 🎞️ Preview
 

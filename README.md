@@ -37,9 +37,8 @@ Our website is always updating and please join our [waitlist](https://forms.gle/
 
 Watch a demo on how to use our product
 
-https://github.com/user-attachments/assets/3333e898-6fbc-44c3-954d-5d40664d9158
 
 
-
+https://github.com/user-attachments/assets/c33b739a-1f41-4f7a-8f0a-e55175409bf5
 
 

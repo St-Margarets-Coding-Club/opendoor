@@ -31,7 +31,8 @@ Initiatives are abstract. Therefore, we outlined the goals we want to achieve.
 
 Our website is always updating and please join our [waitlist](https://forms.gle/hLxx1XsX67QfmPj68) for any questions and contact us at stmargaretscodingclub@gmail.com
 
-[Portal to our website](https://opendoor-pink.vercel.app/)
+Try out our website at
+[OpenDoor](https://opendoor-pink.vercel.app/)
 
 ## 🎞️ Preview
 

@@ -16,7 +16,7 @@ We believe that a modern approach with a different way to thinking would be able
 
 If you want to learn more on our building process and sales approach, please click the links below.
 
-- [DESIGN.md](https://github.com/St-Margarets-Coding-Club/opendoor/blob/main/ENGINEERING.md) Documents our code
+- [DESIGN.md](https://github.com/St-Margarets-Coding-Club/opendoor/blob/main/DESIGN.md) Documents our code
 
 ## 🐾 The Goals
 

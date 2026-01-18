@@ -4,7 +4,7 @@ An animal adoption website [useopendoor.com](https://opendoor-pink.vercel.app/) 
 
 ## 🚀 Features
 
-- Built by High Schoolers
+- Aesthetic user interface
 - Sourced from major animal shelters
 - Simple and easy to use
  
@@ -16,7 +16,7 @@ We believe that a modern approach with a different way to thinking would be able
 
 If you want to learn more on our building process and sales approach, please click the links below.
 
-- [ENGINEERING.md](https://github.com/St-Margarets-Coding-Club/opendoor/blob/main/ENGINEERING.md)
+- [DESIGN.md](https://github.com/St-Margarets-Coding-Club/opendoor/blob/main/ENGINEERING.md) Documents our code
 
 ## 🐾 The Goals
 

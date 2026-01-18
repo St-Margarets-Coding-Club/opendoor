@@ -17,7 +17,6 @@ We believe that a modern approach with a different way to thinking would be able
 If you want to learn more on our building process and sales approach, please click the links below.
 
 - [ENGINEERING.md](https://github.com/St-Margarets-Coding-Club/opendoor/blob/main/ENGINEERING.md)
-- [SALES.md](https://github.com/St-Margarets-Coding-Club/opendoor/blob/main/SALES.md)
 
 ## 🐾 The Goals
 
@@ -29,7 +28,7 @@ Initiatives are abstract. Therefore, we outlined the goals we want to achieve.
  
 ## 🌐 Try out OpenDoor
 
-Our website is always updating and please join our [waitlist](https://forms.gle/hLxx1XsX67QfmPj68) for any questions and contact us at stmargaretscodingclub@gmail.com
+Our website is always updating and please join our [waitlist](https://forms.gle/hLxx1XsX67QfmPj68) and for any questions please contact us at stmargaretscodingclub@gmail.com
 
 Try out our website at
 [useopendoor.com](https://opendoor-pink.vercel.app/)

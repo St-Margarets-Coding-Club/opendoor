@@ -153,18 +153,17 @@ main {
 .bottom {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin: 5px;
+        align-items: center
 }
 
 #shuffleButton {
-        width: 175px;
+        width: 160px;
         height: 100px;
         cursor: pointer;
 }
 
 #adoptButton {
-        width: 175px;
+        width: 160px;
         height: 100px;
         cursor: pointer;
 }

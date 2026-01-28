@@ -150,10 +150,6 @@ main {
         margin: 0 12px;
 }
 
-.adopt-button {
-        display: inline-block;
-}
-
 .bottom {
         display: flex;
         justify-content: space-between;

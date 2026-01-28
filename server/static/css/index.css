@@ -167,6 +167,12 @@ main {
         cursor: pointer;
 }
 
+#adoptButton {
+        width: 175px;
+        height: 100px;
+        cursor: pointer;
+}
+
 #data-link,
 #data-image {
         display: none;

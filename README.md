@@ -39,6 +39,10 @@ Watch a demo on how to use our product
 
 
 
+https://github.com/user-attachments/assets/54f8a33b-dfe4-4a48-ac7f-afd54d843c7b
+
+
+
 https://github.com/user-attachments/assets/c33b739a-1f41-4f7a-8f0a-e55175409bf5
 
 

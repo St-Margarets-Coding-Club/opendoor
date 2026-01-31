@@ -7,9 +7,9 @@ body {
         font-weight: bold;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        min-height: 100dvh;
         background-color: #e5d8d2;
-        overflow-y: hidden;
+        overflow-y: auto;
 }
 
 header {

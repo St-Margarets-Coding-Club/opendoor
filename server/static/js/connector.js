@@ -1,6 +1,6 @@
 
 function fetchData() {
-//This gets the animal portfolio
+    //This gets the animal portfolio
     fetch('/get_data')
         .then(response => {
 
@@ -13,7 +13,7 @@ function fetchData() {
         .then(data => {
 
             //This is the functions that would be called if data is loaded succesfully
-            displayName(data); 
+            displayName(data);
             displayGender(data);
             displaylink(data);
             displayOrganization(data);
@@ -23,87 +23,81 @@ function fetchData() {
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
         });
-    }
-    
-
-    //Use the functions where you want to display animals identifications(name, link to it, etc...)
-    
-    function displayName(items) {
-        //Displays animals name
-        const listElement = document.getElementById('data-name');
-        listElement.innerHTML = ''; 
-        const listItem = document.createElement('p');
-        listItem.textContent = items.name;
-        listElement.appendChild(listItem);
+}
 
 
-    };
+//Use the functions where you want to display animals identifications(name, link to it, etc...)
 
-        function displayGender(items) {
-        //displays animals gender
-        const listElement = document.getElementById('data-gender');
-        listElement.innerHTML = ''; 
-        const listItem = document.createElement('p');
-        listItem.textContent = items.gender;
-        listElement.appendChild(listItem);
-
-
-    };
-        function displaylink(items) {
-        //Displays animals access link 
-        const listItem = document.getElementById('adoptLink');
-        
-        listItem.href = items.link;
-        listItem.target = '_blank'
-        
-        console.log(items);
-
-    };
-        function displayOrganization(items) {
-        //Displays organizations name where the animal is located at
-        const listElement = document.getElementById('data-organization');
-        listElement.innerHTML = ''; 
-        const listItem = document.createElement('p');
-        listItem.textContent = items.organization;
-        listElement.appendChild(listItem);
-        console.log(items);
-
-    };
-        function displayType(items) {
-        //Displays animals type
-        const listElement = document.getElementById('data-type');
-        listElement.innerHTML = ''; 
-        const listItem = document.createElement('p');
-        listItem.textContent = items.type;
-        listElement.appendChild(listItem);
-        console.log(items);
-
-    };
-
-    function displayImage(items){
-        //Displays the image
-        const cont = document.getElementById("imageHolder");
-        cont.innerHTML = ""
-        const petImage = document.createElement('img');
-        petImage.src = items.image;
-        petImage.alt = "Pet image was supposed to be here:(";
-        petImage.width = 350;
-        petImage.height = 350;
-        petImage.style.borderRadius = "35px";
-        petImage.loading = "lazy";
-        
-        cont.appendChild(petImage);
+function displayName(items) {
+    //Displays animals name
+    const listElement = document.getElementById('data-name');
+    listElement.innerHTML = '';
+    const listItem = document.createElement('p');
+    listItem.textContent = items.name;
+    listElement.appendChild(listItem);
 
 
-    }
+};
 
-    function toggleEmail() {
-        const emailIcon = document.getElementById('emailIcon');
-        const emailAddress = 'https://forms.gle/QpAajphxUtpaT93L7';
-        window.open(emailAddress, '_blank');
-    }
+function displayGender(items) {
+    //displays animals gender
+    const listElement = document.getElementById('data-gender');
+    listElement.innerHTML = '';
+    const listItem = document.createElement('p');
+    listItem.textContent = items.gender;
+    listElement.appendChild(listItem);
 
-    function reloadPage() {
-        location.reload();
-    }
+
+};
+function displaylink(items) {
+    //Displays animals access link 
+    const listItem = document.getElementById('adoptLink');
+
+    listItem.href = items.link;
+    listItem.target = '_blank'
+
+    console.log(items);
+
+};
+function displayOrganization(items) {
+    //Displays organizations name where the animal is located at
+    const listElement = document.getElementById('data-organization');
+    listElement.innerHTML = '';
+    const listItem = document.createElement('p');
+    listItem.textContent = items.organization;
+    listElement.appendChild(listItem);
+    console.log(items);
+
+};
+function displayType(items) {
+    //Displays animals type
+    const listElement = document.getElementById('data-type');
+    listElement.innerHTML = '';
+    const listItem = document.createElement('p');
+    listItem.textContent = items.type;
+    listElement.appendChild(listItem);
+    console.log(items);
+
+};
+
+function displayImage(items) {
+    //Displays the image
+    const cont = document.getElementById("imageHolder");
+    cont.innerHTML = ""
+    const petImage = document.createElement('img');
+    petImage.src = items.image;
+    petImage.alt = "Pet image was supposed to be here:(";
+    petImage.width = 350;
+    petImage.height = 350;
+    petImage.style.borderRadius = "35px";
+    petImage.loading = "lazy";
+
+    cont.appendChild(petImage);
+
+
+}
+
+function reloadPage() {
+    location.reload();
+}
 

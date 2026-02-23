@@ -8,19 +8,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/closeddoor.png') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/opendoor.png') }}">
         <script defer src="/_vercel/insights/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+TC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+TC&display=swap"
+                rel="stylesheet">
 </head>
 
 <body onload="fetchData()">
         <header>
-                <img src="{{ url_for('static', filename='images/closeddoor.png') }}" alt="Logo" class="logo"
+                <img src="{{ url_for('static', filename='images/opendoor.png') }}" alt="Logo" class="logo"
                         onclick="reloadPage()">
-                <img src="{{ url_for('static', filename='images/mail.png') }}" id="emailIcon" alt="Contact"
-                        onclick="toggleEmail()">
         </header>
 
         <main>
@@ -31,12 +30,12 @@
 
                         <div class="info">
                                 <div class="name-and-org">
-                                <ul id="data-name">
-                                        <li class="placeholder">Dog Name</li>
-                                </ul>
-                                <ul id="data-organization">
-                                        <li class="placeholder">Shelter Name</li>
-                                </ul>
+                                        <ul id="data-name">
+                                                <li class="placeholder">Dog Name</li>
+                                        </ul>
+                                        <ul id="data-organization">
+                                                <li class="placeholder">Shelter Name</li>
+                                        </ul>
                                 </div>
                                 <div class="type-gender">
                                         <ul id="data-type">
@@ -49,15 +48,16 @@
 
                                 <div class="bottom">
                                         <a href="#" id="adoptLink" class="adopt-button">
-                                                <img src="{{ url_for('static', filename='images/adoptme.png') }}" id="adoptButton" alt="Adopt Button">
+                                                <img src="{{ url_for('static', filename='images/adoptme.png') }}"
+                                                        id="adoptButton" alt="Adopt Button">
                                         </a>
-                                                <img src="{{ url_for('static', filename='images/shuffle.png') }}" id="shuffleButton" alt="New Animal"
-                                                        onclick="fetchData()">
+                                        <img src="{{ url_for('static', filename='images/shuffle.png') }}"
+                                                id="shuffleButton" alt="New Animal" onclick="fetchData()">
                                 </div>
                         </div>
                 </div>
         </main>
-       
+
         <ul id="data-image"></ul>
 
         <script>

@@ -1,4 +1,4 @@
-
+// Main function
 function fetchData() {
     //This gets the animal portfolio
     fetch('/get_data')
@@ -93,8 +93,6 @@ function displayImage(items) {
     petImage.loading = "lazy";
 
     cont.appendChild(petImage);
-
-
 }
 
 function reloadPage() {

@@ -98,4 +98,3 @@ function displayImage(items) {
 function reloadPage() {
     location.reload();
 }
-

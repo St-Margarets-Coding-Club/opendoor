@@ -78,76 +78,28 @@ main {
         text-align: center;
 }
 
-.name-and-org {
+.info-row {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-bottom: 8px;
+        text-align: left;
+}
+
+.info-row .label {
+        font-weight: bold;
+        color: #444;
+        min-width: 80px;
+        flex-shrink: 0;
 }
 
 #data-name,
 #data-organization,
 #data-type,
 #data-gender {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-}
-
-#data-name li {
-        font-size: 36px;
-        font-weight: bold;
-        margin: 0 0 8px 0;
+        font-size: 20px;
+        font-weight: normal;
         color: #222;
-}
-
-#data-organization li {
-        font-size: 20px;
-        color: #555;
-        margin: 0 0 12px 0;
-}
-
-.type-gender {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-}
-
-#data-type li::after {
-        content: " • ";
-        color: #888;
-}
-
-#data-type li.placeholder::after {
-        content: "";
-}
-
-.placeholder {
-        background-color: #e0e0e0;
-        border-radius: 12px;
-        color: #999999;
-        text-align: center;
-        margin: 12px auto;
-        max-width: 90%;
-}
-
-#data-name .placeholder {
-        font-size: 36px;
-        font-weight: bold;
-        padding: 24px 40px;
-        color: #000;
-}
-
-#data-organization .placeholder {
-        font-size: 20px;
-        padding: 16px 32px;
-}
-
-.type-gender .placeholder {
-        display: inline-block;
-        font-size: 18px;
-        padding: 10px 24px;
-        border-radius: 30px;
-        margin: 0 12px;
 }
 
 .bottom {

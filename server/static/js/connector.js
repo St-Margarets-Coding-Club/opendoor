@@ -30,25 +30,15 @@ function fetchData() {
 
 function displayName(items) {
     //Displays animals name
-    const listElement = document.getElementById('data-name');
-    listElement.innerHTML = '';
-    const listItem = document.createElement('p');
-    listItem.textContent = items.name;
-    listElement.appendChild(listItem);
-
-
-};
+    const element = document.getElementById('data-name');
+    element.textContent = items.name;
+}
 
 function displayGender(items) {
     //displays animals gender
-    const listElement = document.getElementById('data-gender');
-    listElement.innerHTML = '';
-    const listItem = document.createElement('p');
-    listItem.textContent = items.gender;
-    listElement.appendChild(listItem);
-
-
-};
+    const element = document.getElementById('data-gender');
+    element.textContent = items.gender;
+}
 function displaylink(items) {
     //Displays animals access link 
     const listItem = document.getElementById('adoptLink');
@@ -61,24 +51,14 @@ function displaylink(items) {
 };
 function displayOrganization(items) {
     //Displays organizations name where the animal is located at
-    const listElement = document.getElementById('data-organization');
-    listElement.innerHTML = '';
-    const listItem = document.createElement('p');
-    listItem.textContent = items.organization;
-    listElement.appendChild(listItem);
-    console.log(items);
-
-};
+    const element = document.getElementById('data-organization');
+    element.textContent = items.organization;
+}
 function displayType(items) {
     //Displays animals type
-    const listElement = document.getElementById('data-type');
-    listElement.innerHTML = '';
-    const listItem = document.createElement('p');
-    listItem.textContent = items.type;
-    listElement.appendChild(listItem);
-    console.log(items);
-
-};
+    const element = document.getElementById('data-type');
+    element.textContent = items.type;
+}
 
 function displayImage(items) {
     //Displays the image

@@ -98,8 +98,9 @@ main {
 #data-type,
 #data-gender {
         font-size: 20px;
-        font-weight: normal;
+        font-weight: bold;
         color: #222;
+        justify-self: center;
 }
 
 .bottom {

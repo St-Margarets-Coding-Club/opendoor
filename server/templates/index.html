@@ -30,19 +30,19 @@
 
                         <div class="info">
                                 <div class="info-row">
-                                        <span class="label">Name:</span>
+                                        <span class="label">🪪</span>
                                         <span id="data-name">Animal Name</span>
                                 </div>
                                 <div class="info-row">
-                                        <span class="label">Org:</span>
+                                        <span class="label">🏠</span>
                                         <span id="data-organization">Shelter Name</span>
                                 </div>
                                 <div class="info-row">
-                                        <span class="label">Type:</span>
+                                        <span class="label">🐾</span>
                                         <span id="data-type">Animal Type</span>
                                 </div>
                                 <div class="info-row">
-                                        <span class="label">Gender:</span>
+                                        <span class="label">👦🧒</span>
                                         <span id="data-gender">Gender</span>
                                 </div>
 
@@ -59,19 +59,6 @@
         </main>
 
         <ul id="data-image"></ul>
-
-        <script>
-                const emailSrc = "";
-                const checkSrc = "";
-
-                function toggleEmail() {
-                        const icon = document.getElementById('emailIcon');
-                        icon.src = checkSrc;
-                        setTimeout(() => {
-                                icon.src = emailSrc;
-                        }, 1000);
-                }
-        </script>
 
         <script src="{{ url_for('static', filename='js/connector.js') }}" async defer></script>
 </body>

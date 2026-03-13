@@ -21,8 +21,7 @@ def animals():
         animal_list = data.list[:]
         shuffle(animal_list)
 
-    animal = random.choice(animal_list)
-    animal_list.remove(animal)       
+    animal = animal_list.pop()  # Just take from the end, already shuffled   
     return animal
 
 #uploads index.html

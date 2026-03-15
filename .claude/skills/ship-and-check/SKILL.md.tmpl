@@ -1,0 +1,364 @@
+---
+name: ship-and-check
+version: 1.0.0
+description: |
+  Ship changes to production and verify they work. Analyzes git diff, generates conventional commits, pushes to GitHub, waits for Vercel deploy, tests changes via gstack/browse, and generates detailed reports.
+allowed-tools:
+  - Bash
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Skill
+---
+
+# Ship and Check: Deploy and Verify Workflow
+
+You are running the `/ship-and-check` workflow. This skill automates the complete shipping process:
+1. Analyze git diff and generate conventional commit message
+2. Get user confirmation
+3. Push to GitHub
+4. Wait for Vercel deployment
+5. Test changes via gstack/browse
+6. Generate detailed report
+
+**Always stop for:**
+- User rejecting the commit message
+- Push failures
+- Vercel deployment errors
+- User explicitly requesting to stop
+
+**Never run concurrently:** If a ship-and-check is already running, block subsequent requests.
+
+---
+
+## Step 1: Cleanup
+
+Check if `./ship-and-check` folder exists:
+
+```bash
+if [ -d "./ship-and-check" ]; then
+  echo "Found existing ship-and-check folder"
+fi
+```
+
+**If folder exists:** Check if user previously requested to keep it. If not, delete it:
+
+```bash
+rm -rf ./ship-and-check
+```
+
+**If user explicitly said "keep the reports folder" in this session:** Skip deletion and note "Preserving reports folder as requested."
+
+---
+
+## Step 2: Analyze Git Diff
+
+1. Check git status to ensure there are changes to commit:
+
+```bash
+git status --short
+```
+
+**If no changes:** Output "No uncommitted changes found. Nothing to ship." and STOP.
+
+2. Get the diff of uncommitted changes:
+
+```bash
+git diff HEAD
+```
+
+3. Analyze the diff to categorize changes:
+   - **feat:** New features, functionality added
+   - **fix:** Bug fixes
+   - **chore:** Maintenance, config, dependencies
+   - **docs:** Documentation changes
+   - **refactor:** Code restructuring without behavior change
+   - **style:** Formatting, semicolons, etc.
+   - **test:** Test additions/updates
+
+4. Generate a conventional commit message following the pattern:
+   - `<type>: <description>` (e.g., "feat: add user authentication")
+   - Description should be specific and actionable
+   - ❌ NOT "feat: added button"
+   - ✅ YES "feat: add 'Save Draft' button to post editor"
+
+5. Count lines changed to estimate wait time:
+
+```bash
+git diff HEAD --stat | tail -1
+```
+
+---
+
+## Step 3: User Confirmation
+
+Use **AskUserQuestion** to confirm the commit:
+
+- **Message:** "Ready to ship the following changes:"
+  - Show the generated commit message
+  - Show summary of files changed
+  - Show brief description of what the commit does
+- **Options:**
+  - A) Yes, ship it (proceed)
+  - B) Edit commit message (ask for new message)
+  - C) No, cancel (STOP)
+
+**If user chooses B:** Ask for the new commit message, then re-confirm.
+
+**If user chooses C:** STOP immediately.
+
+---
+
+## Step 4: Commit and Push
+
+1. Stage all changes:
+
+```bash
+git add -A
+```
+
+2. Commit with the confirmed message:
+
+```bash
+git commit -m "<confirmed-message>"
+```
+
+3. Push to origin:
+
+```bash
+git push origin $(git branch --show-current)
+```
+
+**If push fails:** Notify user with the error and STOP.
+
+**If push succeeds:** Output "✓ Pushed to GitHub" and continue.
+
+---
+
+## Step 5: Find Project URL
+
+1. Read README.md to find the project URL:
+
+```bash
+head -100 README.md
+```
+
+2. Look for URL in:
+   - Introduction/heading section
+   - "Try Out" or "Demo" section
+   - Badges (shields.io)
+   - Any markdown link that looks like a deployed app
+
+3. **If URL found:** Save it for browsing.
+
+4. **If no URL found:** Use **AskUserQuestion**:
+   - Message: "Could not find project URL in README.md. Please provide the URL to test:"
+   - Options: Text input for URL
+
+---
+
+## Step 6: Pre-Deployment Baseline
+
+1. Use the `/browse` skill to capture the current state of the site:
+
+```
+/browse goto <project-url>
+```
+
+2. Take a snapshot of the current state.
+
+3. Note the current state for comparison.
+
+---
+
+## Step 7: Wait for Deployment
+
+Calculate wait time based on diff size:
+
+- < 50 lines changed: 30 seconds
+- 50-200 lines changed: 60 seconds
+- 200+ lines changed: 90 seconds
+
+Output: "Waiting X seconds for Vercel deployment..."
+
+Use **Bash** to sleep:
+
+```bash
+sleep <seconds>
+```
+
+---
+
+## Step 8: Post-Deployment Verification
+
+1. Use `/browse` skill to check the site:
+
+```
+/browse goto <project-url>
+```
+
+2. **Check for Vercel errors:**
+   - Look for "Deployment Error" or "500" errors
+   - Look for "This page could not be found"
+   - Look for any error states
+
+**If Vercel error found:** Output error details and use **AskUserQuestion**:
+- Message: "Vercel deployment appears to have failed. Please check the deployment manually and let me know when to continue."
+- Options: A) Continue anyway, B) Stop here
+
+3. **Check if changes are visible:**
+   - Compare current state to baseline
+   - Look for the specific changes from the git diff
+
+**If no changes visible:** Use **AskUserQuestion**:
+- Message: "No changes detected on the site. This could mean: (1) Deployment is still processing, (2) Changes are cached, or (3) Something went wrong. What would you like to do?"
+- Options: A) Wait 30s more and retry, B) Continue anyway, C) Stop
+
+---
+
+## Step 9: Test Changes
+
+Based on the git diff and any user-provided parameters, test the changes:
+
+### Testing Approach
+
+**As an End-User:**
+- Navigate to the affected pages/features
+- Interact with new features naturally
+- Note emotional experience (confusion, delight, friction)
+- Try edge cases a user might hit
+
+**As a Senior Engineer:**
+- Look for hidden bugs
+- Check for performance issues
+- Verify error handling
+- Spot cleaner implementation opportunities
+- Check integration with existing features
+
+### Test Documentation
+
+For each test performed, document:
+1. **Action taken** (what you did)
+2. **Expected result** (what should happen)
+3. **Actual result** (what actually happened)
+4. **Assessment** (pass/fail/partial)
+
+Use `/browse` skill commands to interact:
+- `/browse goto <url>` — navigate to page
+- `/browse click <selector>` — click element
+- `/browse type <selector> <text>` — type into input
+- `/browse screenshot` — capture state
+
+---
+
+## Step 10: Generate Report
+
+Create a detailed markdown report at `./ship-and-check/reports/ship-and-check-YYYY-MM-DD.md`:
+
+### Report Structure
+
+```markdown
+# Ship & Check Report - YYYY-MM-DD
+
+## Commit Information
+- **Message:** `<commit-message>`
+- **Branch:** `<branch-name>`
+- **Files Changed:** N files (+X lines, -Y lines)
+
+## Pre-Deployment Baseline
+- **URL:** `<project-url>`
+- **State:** Captured at <time>
+
+## Deployment Status
+- **Wait Time:** X seconds
+- **Status:** ✓ Success / ✗ Failed / ⚠ Uncertain
+
+## Test Results
+
+### Test 1: <Feature Name>
+- **Action:** <what was tested>
+- **Expected:** <expected behavior>
+- **Actual:** <observed behavior>
+- **Status:** ✓ Pass / ✗ Fail / ⚠ Partial
+
+### Test 2: <Next Feature>
+...
+
+## End-User Experience
+- **Overall feel:** <emotional response>
+- **Friction points:** <any confusion or difficulty>
+- **Delight moments:** <what worked well>
+
+## Senior Engineer Observations
+- **Hidden bugs spotted:** <potential issues>
+- **Performance concerns:** <speed, loading issues>
+- **Cleaner implementation:** <suggestions>
+- **Error handling:** <edge cases not handled>
+
+## PM Notes for Future Iteration
+- **Feature gaps:** <what's missing>
+- **UX improvements:** <suggestions>
+- **New feature ideas:** <opportunities>
+
+## Overall Assessment
+- **Ship Status:** ✓ Successful / ✗ Failed / ⚠ Partial
+- **Confidence Level:** High / Medium / Low
+- **Recommended Action:** <ship it / fix issues / rollback>
+```
+
+Write the report using **Write** tool.
+
+---
+
+## Step 11: Final Output
+
+1. Output a summary to the user:
+
+```
+✓ Ship & Check Complete
+
+Commit: <commit-message>
+Report: ./ship-and-check/reports/ship-and-check-YYYY-MM-DD.md
+
+Summary:
+- N tests performed
+- X passed, Y failed, Z partial
+- Overall: <assessment>
+
+<key findings>
+```
+
+2. **Note about reports folder:** Remind user that `./ship-and-check` folder will be deleted on the next run unless they explicitly request to keep it.
+
+---
+
+## Edge Cases
+
+| Scenario | Handling |
+|----------|----------|
+| No git changes | Do nothing, notify user |
+| Merge conflicts present | Notify user and STOP |
+| No remote configured | Ask user for remote URL |
+| README.md has no URL | Ask user for project URL |
+| Vercel deploy takes too long | Notify user and ask how to proceed |
+| Site completely down (500 errors) | Ask user and STOP |
+| Conflicting user instructions | Ask for clarification |
+| Massive diff (50+ files) | Filter to meaningful changes; user may provide clues via params |
+| Binary files in diff | Include in commit; user provides context |
+| User tries to run twice simultaneously | Block and refuse; never allow concurrent runs |
+
+---
+
+## Important Rules
+
+- **Commit messages must be specific.** "feat: add button" is not acceptable. "feat: add 'Save Draft' button to post editor" is.
+- **Always test new features first**, then regression test existing functionality.
+- **Reports must be detailed.** "Everything works" is not acceptable. Specific observations are required.
+- **Capture end-user feelings** (confusion, delight, friction) not just technical facts.
+- **Think like a senior engineer** — spot hidden bugs and cleaner implementations.
+- **Proactive communication** — tell user what you're doing during waits.
+- **Respect user overrides** — if user says "keep reports folder", keep it.
+- **Never run concurrently** — block second requests if one is running.

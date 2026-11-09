@@ -31,7 +31,7 @@ list_of_documents = list(cursor)
 
 #Chooses all profiles with image links provided
 documents = [item for item in list_of_documents
-        if item['image'] != 'temp']
+        if item['image'] != 'temp' and item['organization'] != 'HKRS']
 
 list = list(set(tuple(d.items()) for d in documents))
 
